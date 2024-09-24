@@ -9,11 +9,6 @@ class AllRoles extends Component
     protected $roles;
     public $selectedRoleId, $showModal = false;
 
-    public function mount()
-    {
-        $this->roles = Role::paginate(10) ?? [];
-    }
-
     public function editRole($id)
     {
         $this->selectedRoleId = $id;
@@ -22,9 +17,15 @@ class AllRoles extends Component
 
     public function deleteRole($id)
     {
-        Role::find($id)->delete();
-        session()->flash('success', 'Role deleted successfully.');
-        $this->roles = Role::paginate(10); // Refresh the roles list
+        $role = Role::find($id);
+        if ($role) {
+            $role->delete();
+            session()->flash('success', 'Role deleted successfully.');
+        } else {
+            session()->flash('error', 'Role not found.');
+        }
+
+        $this->roles = Role::paginate(10); // Refresh roles list
     }
 
     public function render()

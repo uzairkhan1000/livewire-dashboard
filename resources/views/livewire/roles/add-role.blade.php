@@ -9,9 +9,9 @@
             </div>
         </div>
         <div class="card-body">
-            @if (session()->has('role_success'))
+            @if (session()->has('role_add_success'))
                 <div class="alert alert-success effect" id="successMessage">
-                    {{ session('success') }}
+                    {{ session('role_add_success') }}
                 </div>
             @endif
             <form wire:submit.prevent="addRole">

@@ -81,6 +81,15 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Roles / Permissions</h6>
             </li>
 
+            <li class="nav-item" wire:click="setActiveLinkView('roles.add-role')">
+                <a class="nav-link {{ $activeView == 'roles.add-role' ? 'active' : '' }}">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        {{ $activeView == 'roles.add-role' ? 'text-white' : 'text-dark' }}"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Add Role</span>
+                </a>
+            </li>
             <li class="nav-item" wire:click="setActiveLinkView('roles.all-roles')">
                 <a class="nav-link {{ $activeView == 'roles.all-roles' ? 'active' : '' }}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
