@@ -23,6 +23,13 @@ class AllOrders extends Component
         $this->selectedOrderId = $order_id;
         $this->showModal = true;
     }
+
+    public function deleteOrder($order_id)
+    {
+        Order::destroy($order_id);
+        session()->flash('success', 'Order deleted successfully!');
+        // $this->emit('showSuccessMessage');
+    }
     public function refreshOrderListing($order_id)
     {
         $this->selectedOrderId = $order_id;
