@@ -90,11 +90,11 @@
                                         <p class="text-xs font-weight-bold mb-0">{{ $order->customer_address }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <a href="#" wire:click="editorder({{ $order->id }})" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit order">
+                                        <a href="#" wire:click="editOrder({{ $order->id }})" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit order">
                                             <i class="fas fa-edit text-secondary"></i>
                                         </a>
                                         <span>
-                                            <a href="#" wire:click="deleteorder({{ $order->id }})" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit order">
+                                            <a href="#" wire:click="deleteOrder({{ $order->id }})" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit order">
                                                 <!-- <i class="fas fa-edit text-secondary"></i> -->
                                                 <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                             </a>
@@ -110,9 +110,9 @@
                     <div class="mt-4 col-md-12 d-flex justify-content-center">
                         {{ $orders->links() }}
                     </div>
-                    <!-- @if ($showModal)
-                    @livewire('order.update-order', ['order' => $selectedorderId], key($selectedorderId))
-                    @endif -->
+                    @if ($showModal)
+                    @livewire('order.update-order', ['order' => $selectedOrderId], key($selectedOrderId))
+                    @endif
 
                 </div>
             </div>

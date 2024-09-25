@@ -78,4 +78,17 @@ class AddOrder extends Component
             $this->size_options = [];
         }
     }
+
+    public function editOrder(Order $order)
+    {
+        $product = Product::with('colors.color', 'sizes.size')->find($value);
+        
+        if ($product) {
+            $this->color_options = $product->colors;
+            $this->size_options = $product->sizes;
+        } else {
+            $this->color_options = [];
+            $this->size_options = [];
+        }
+    }
 }

@@ -16,8 +16,9 @@ class ProductColors extends Component
 
     protected $listeners = ['refreshProductColors' => '$refresh'];
 
-    public function mount($product_id, $colors)
+    public function mount($product_id, $colors, $selected_color_id = null)
     {
+        $this->selectedColorId = $selected_color_id;
         $this->product_id = $product_id;
         $this->colors = $colors;
         $this->colorOptions = Color::distinct('code')->pluck('code', 'id')->toArray();
