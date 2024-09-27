@@ -46,8 +46,8 @@
                             <li class="nav-item" wire:click="setActiveLinkView('{{$inner_value}}')">
                                 <a class="nav-link {{ $activeView == $inner_value ? 'active' : '' }}">
                                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                                        <i class="fa {{$this->getIconClass($sub_item)}} ps-2 pe-2 text-center
-                                        {{ $activeView == 'product.add-product-form' ? 'text-white' : 'text-dark' }}"></i>
+                                        <i class="{{$this->getIconClass($inner_value)}} ps-2 pe-2 text-center
+                                        {{ $activeView == $inner_value ? 'text-white' : 'text-dark' }}"></i>
                                     </div>
                                     <span class="nav-link-text ms-1">{{ucwords($inner_item)}}</span>
                                 </a>
@@ -57,8 +57,8 @@
                         <li class="nav-item" wire:click="setActiveLinkView('{{$sub_value}}')">
                             <a class="nav-link {{ $activeView == $sub_value ? 'active' : '' }}">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                                    <i class="fa {{$this->getIconClass($sub_item)}} ps-2 pe-2 text-center
-                                    {{ $activeView == 'product.add-product-form' ? 'text-white' : 'text-dark' }}"></i>
+                                    <i class="{{$this->getIconClass($sub_value)}} ps-2 pe-2 text-center
+                                    {{ $activeView == $sub_value ? 'text-white' : 'text-dark' }}"></i>
                                 </div>
                                 <span class="nav-link-text ms-1">{{ucwords($sub_item)}}</span>
                             </a>
