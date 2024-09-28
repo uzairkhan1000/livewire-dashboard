@@ -67,8 +67,9 @@ class AddProductForm extends Component
         'stock_quantity' => $validatedData['stock_quantity'],
         'status' => $validatedData['status'],
         'category_id' => $validatedData['category_id'],
-        'product_images' => json_encode($imagePaths), // Convert array to JSON string
-        // Add other form fields...
+        'product_images' => json_encode($imagePaths), 
+        'created_by' => auth()->user()->id,
+        'created_by_name' => auth()->user()->name
     ]);
 
     // Clear the form fields after successful submission

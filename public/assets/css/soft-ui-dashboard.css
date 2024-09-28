@@ -2542,7 +2542,6 @@ progress {
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  min-height: 500px;
 }
 
 @media (max-width: 575.98px) {
@@ -4044,7 +4043,7 @@ textarea.form-control-lg {
 }
 
 .dropdown-menu {
-  position: relative;
+  position: absolute;
   z-index: 1000;
   display: none;
   min-width: 11rem;
@@ -5439,54 +5438,6 @@ textarea.form-control-lg {
   color: #3f4652;
 }
 
-.effect {
-  position: absolute;
-  right: 0;
-  top: 0;
-  animation-name: dragUp;
-  animation-duration: 0.5s;
-  z-index: 9999;
-}
-
-@keyframes dragUp {
-  from {
-    right: -20px;
-  }
-  to {
-    right: 0px; /* Adjust this value to control the distance the element moves */
-  }
-}
-
-@keyframes moveShadow {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-}
-
-/* The container with the white background */
-.loading-bar {
-  width: 100%; /* Adjust the width as needed */
-  height: 2px; /* Adjust the height as needed */
-  background-color: white; /* Set the white background */
-  position: relative;
-  overflow: hidden;
-}
-
-/* The moving black shadow */
-.loading-bar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f53939; /* Set the black color for the shadow */
-  animation: moveShadow 4s linear infinite; /* Adjust the animation duration or timing as needed */
-}
-
 .alert-success {
   color: #345609;
   background-color: #e6f7d0;
@@ -6035,7 +5986,7 @@ textarea.form-control-lg {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1050;
@@ -6045,19 +5996,6 @@ textarea.form-control-lg {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
-}
-
-.settings-modal {
-    position: absolute;
-    top: 55px;
-    right: 0;
-    z-index: 9999;
-    display: none;
-    width: 25%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    outline: 0;
 }
 
 .modal-dialog {
@@ -6151,7 +6089,7 @@ textarea.form-control-lg {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  /* padding: 1rem; */
+  padding: 1rem;
 }
 
 .modal-footer {
@@ -6169,45 +6107,10 @@ textarea.form-control-lg {
   margin: 0.25rem;
 }
 
-.product-color {
-  padding: 20px;
-  margin: 5px;
-  position: relative;
-  border-radius: 50px;
-}
-.product-size-parent {
-  position: relative;
-}
-.product-size {
-    text-align: center;
-    padding: 2px;
-    width: 50px;
-    margin: 5px;
-    position: relative;
-    border-radius: 50px;
-    background-color: snow;
-}
-
-.color-cross {
-  position: absolute;
-  top: -10px;
-  right: -4px;
-  cursor: pointer;
-}
-
-.image-cross {
-  position: absolute;
-  top: 0px;
-  right: -4px;
-  cursor: pointer;
-  z-index: 10;
-  color:red;
-}
-
 @media (min-width: 576px) {
   .modal-dialog {
-    /* max-width: 500px;
-    margin: 1.75rem auto; */
+    max-width: 500px;
+    margin: 1.75rem auto;
   }
 
   .modal-dialog-scrollable {
@@ -21176,9 +21079,6 @@ hr.horizontal.gray-light {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.position-relative {
-  position: relative;
-}
 .navbar-vertical.navbar-expand-xs {
   display: block;
   position: fixed;
@@ -21193,7 +21093,7 @@ hr.horizontal.gray-light {
 .navbar-vertical.navbar-expand-xs .navbar-collapse {
   display: block;
   overflow: auto;
-  /* height: calc(100vh - 360px); */
+  height: calc(100vh - 360px);
 }
 .navbar-vertical.navbar-expand-xs > [class*=container] {
   flex-direction: column;
@@ -21202,7 +21102,6 @@ hr.horizontal.gray-light {
   padding-left: 0;
   padding-right: 0;
 }
-
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .navbar-vertical.navbar-expand-xs > [class*=container] {
     min-height: none;
@@ -21219,7 +21118,6 @@ hr.horizontal.gray-light {
   padding-top: 0.675rem;
   padding-bottom: 0.675rem;
   margin: 0 1rem;
-  cursor: pointer;
 }
 .navbar-vertical.navbar-expand-xs .navbar-nav .nav-link .nav-link-text,
 .navbar-vertical.navbar-expand-xs .navbar-nav .nav-link .sidenav-mini-icon,
@@ -21785,7 +21683,6 @@ hr.horizontal.gray-light {
   }
   .sidenav.fixed-start ~ .main-content {
     margin-left: 17.125rem;
-    position: relative;
   }
   .sidenav.fixed-end ~ .main-content {
     margin-right: 17.125rem;
@@ -21810,7 +21707,7 @@ hr.horizontal.gray-light {
 }
 
 .g-sidenav-show .sidenav .nav-item .collapse {
-  height: 100%;
+  height: auto;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -24695,28 +24592,4 @@ pre[class*=language-] {
   .ps {
     overflow: auto !important;
   }
-}
-
-.image-preview {
-  padding: 0;
-  position: relative;
-}
-
-.product-color {
-  width: 20px; 
-  margin: 5px; 
-  padding: 15px;
-}
-
-.color-active {
-  border: 2px solid #c800008f;
-}
-
-.product-thumbnail {
-    height: 200px;
-    padding: 20px;
-}
-
-.product-thumbnail img {
-    height: 100%;
 }

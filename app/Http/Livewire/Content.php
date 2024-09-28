@@ -10,7 +10,7 @@ class Content extends Component
     public $activeView = 'dashboard';
     public $showSettings = false;
 
-    protected $listeners = ['handleSetNavbarLink', 'hideSettings'];
+    protected $listeners = ['handleSetNavbarLink'];
 
     public function render()
     {
@@ -43,9 +43,5 @@ class Content extends Component
         } else {
             $this->showSettings = false;
         }
-    }
-
-    function hideSettings() {
-        $this->showSettings = false;
     }
 }

@@ -1,5 +1,4 @@
 <main class="main-content mt-1 border-radius-lg">
-
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="false">
         <div class="container-fluid py-1 px-3">
             <nav aria-label="breadcrumb">
@@ -41,18 +40,22 @@
                             </div>
                         </a>
                     </li>
-                    <li class="nav-item px-3 d-flex align-items-center" wire:click="showSettings()">
-                        <a class="nav-link text-body p-0">
+                    <li class="nav-item px-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0">
                             <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                         </a>
                     </li>
+
                     <li class="nav-item dropdown pe-2 d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-bell cursor-pointer"></i>
+                            <i class="fa fa-bell cursor-pointer notification-bell"></i>
+                            <audio id="notification-sound" src="{{asset('assets/sounds/notification/notification-sound.wav')}}" preload="auto"></audio>
+
                         </a>
 
-                        <ul class="dropdown-menu  dropdown-menu-end d-block px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                                    <li class="mb-2">
+                       
+                        <ul class="dropdown-menu dropdown-menu-end d-block px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton" id="notifications">
+                                    {{-- <li class="mb-2">
                                         <a class="dropdown-item border-radius-md" href="javascript:;">
                                             <div class="d-flex py-1">
                                                 <div class="my-auto">
@@ -69,8 +72,8 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
-                                    <li class="mb-2">
+                                    </li> --}}
+                                    {{-- <li class="mb-2">
                                         <a class="dropdown-item border-radius-md" href="javascript:;">
                                             <div class="d-flex py-1">
                                                 <div class="my-auto">
@@ -117,15 +120,13 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    @if($showSettings)
-        @livewire('settings')
-    @endif
     @livewire("{$activeView}", key($activeView))
+    @livewire('settings')
 </main>

@@ -43,7 +43,7 @@
                             <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">{{$sub_item}}</h6>
                         </li>
                             @foreach($sub_value as $inner_item => $inner_value)
-                            <li class="nav-item" wire:click="setActiveLinkView('{{$inner_value}}')">
+                            <li class="nav-item cursor-pointer" wire:click="setActiveLinkView('{{$inner_value}}')">
                                 <a class="nav-link {{ $activeView == $inner_value ? 'active' : '' }}">
                                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                         <i class="{{$this->getIconClass($inner_value)}} ps-2 pe-2 text-center
@@ -54,7 +54,7 @@
                             </li>
                             @endforeach
                         @else
-                        <li class="nav-item" wire:click="setActiveLinkView('{{$sub_value}}')">
+                        <li class="nav-item cursor-pointer" wire:click="setActiveLinkView('{{$sub_value}}')">
                             <a class="nav-link {{ $activeView == $sub_value ? 'active' : '' }}">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                     <i class="{{$this->getIconClass($sub_value)}} ps-2 pe-2 text-center
@@ -66,7 +66,7 @@
                         @endif
                     @endforeach
                 @else
-                <li class="nav-item pb-2" wire:click="setActiveLinkView('{{$value}}')">
+                <li class="nav-item pb-2 cursor-pointer" wire:click="setActiveLinkView('{{$value}}')">
                     <a class="nav-link {{ $activeView == $value ? 'active' : '' }}">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

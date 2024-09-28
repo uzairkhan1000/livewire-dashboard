@@ -13,14 +13,8 @@ class Settings extends Component
         return view('livewire.settings');
     }
 
-    public function hideSettings() 
-    {
-        $this->emit('hideSettings');
-    }
-
     public function setActiveLinkView($view)
     {
         $this->emit('handleSetNavbarLink', $view);
-        $this->emit('hideSettings');
     }
 }

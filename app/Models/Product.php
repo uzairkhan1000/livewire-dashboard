@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,7 +32,9 @@ class Product extends Model
         'tags_keywords',
         'average_rating',
         'number_of_reviews',
-        'status'
+        'status',
+        'created_by',
+        'created_by_name'
     ];
 
     public function scopeActive($query) {
