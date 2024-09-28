@@ -7,7 +7,7 @@
                         <div>
                             <h5 class="text-lg font-semibold">All Colors</h5>
                         </div>
-                        <a wire:click="$emit('handleSetNavbarLink', 'color.add-color')" class="btn bg-gradient-primary btn-sm">+ New Color</a>
+                        <a wire:click="$emit('handleSetContent', 'color.add-color')" class="btn bg-gradient-primary btn-sm">+ New Color</a>
                     </div>
                 </div>
                 @if (session()->has('color_success'))

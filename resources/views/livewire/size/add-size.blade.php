@@ -5,7 +5,7 @@
                 <div>
                     <h5 class="text-lg font-semibold">Add Size</h5>
                 </div>
-                <a wire:click="$emit('handleSetNavbarLink', 'size.all-sizes')" class="btn bg-gradient-primary btn-sm">All Sizes</a>
+                <a wire:click="$emit('handleSetContent', 'size.all-sizes')" class="btn bg-gradient-primary btn-sm">All Sizes</a>
             </div>
         </div>
         <div class="card-body">

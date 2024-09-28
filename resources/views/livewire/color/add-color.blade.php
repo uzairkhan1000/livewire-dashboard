@@ -5,7 +5,7 @@
                 <div>
                     <h5 class="text-lg font-semibold">Add Color</h5>
                 </div>
-                <a wire:click="$emit('handleSetNavbarLink', 'color.all-colors')" class="btn bg-gradient-primary btn-sm">All Colors</a>
+                <a wire:click="$emit('handleSetContent', 'color.all-colors')" class="btn bg-gradient-primary btn-sm">All Colors</a>
             </div>
         </div>
         <div class="card-body">

@@ -15,6 +15,6 @@ class Settings extends Component
 
     public function setActiveLinkView($view)
     {
-        $this->emit('handleSetNavbarLink', $view);
+        $this->emit('handleSetContent', $view);
     }
 }

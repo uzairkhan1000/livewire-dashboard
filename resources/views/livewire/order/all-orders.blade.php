@@ -7,7 +7,7 @@
                         <div>
                             <h5 class="mb-0">All Orders</h5>
                         </div>
-                        <a wire:click="$emit('handleSetNavbarLink', 'order.add-order')" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New Order</a>
+                        <a wire:click="$emit('handleSetContent', 'order.add-order')" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New Order</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">

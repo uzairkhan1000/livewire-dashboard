@@ -5,7 +5,7 @@
                 <div>
                     <h5 class="text-lg font-semibold">Add Product</h5>
                 </div>
-                <a wire:click="$emit('handleSetNavbarLink', 'product.product-listing')" class="btn bg-gradient-primary btn-sm">All Products</a>
+                <a wire:click="$emit('handleSetContent', 'product.product-listing')" class="btn bg-gradient-primary btn-sm">All Products</a>
             </div>
         </div>
         <div class="card-body">

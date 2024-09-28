@@ -7,7 +7,7 @@
                         <div>
                             <h5 class="text-lg font-semibold">All Sizes</h5>
                         </div>
-                        <a wire:click="$emit('handleSetNavbarLink', 'size.add-size')" class="btn bg-gradient-primary btn-sm">+ New Size</a>
+                        <a wire:click="$emit('handleSetContent', 'size.add-size')" class="btn bg-gradient-primary btn-sm">+ New Size</a>
                     </div>
                 </div>
                 @if (session()->has('size_success'))

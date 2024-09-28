@@ -25,7 +25,7 @@ class ProductListing extends Component
     public function setActiveLinkView($view)
     {
         $this->emit('setActiveMenuItem', $view);
-        $this->emit('handleSetNavbarLink', $view);
+        $this->emit('handleSetContent', $view);
     }
 
     public function editProduct($productId)

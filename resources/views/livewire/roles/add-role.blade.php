@@ -5,7 +5,7 @@
                 <div>
                     <h5 class="text-lg font-semibold">Add Role</h5>
                 </div>
-                <a wire:click="$emit('handleSetNavbarLink', 'roles.all-roles')" class="btn bg-gradient-primary btn-sm">All Roles</a>
+                <a wire:click="$emit('handleSetContent', 'roles.all-roles')" class="btn bg-gradient-primary btn-sm">All Roles</a>
             </div>
         </div>
         <div class="card-body">

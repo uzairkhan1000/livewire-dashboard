@@ -28,8 +28,6 @@ class Sidebar extends Component
         ],
     ];
 
-    protected $listeners = ['setActiveMenuItem'];
-
     public function render()
     {
         return view('livewire.sidebar');
@@ -38,12 +36,7 @@ class Sidebar extends Component
     public function setActiveLinkView($view)
     {
         $this->activeView = $view;
-        $this->emit('handleSetNavbarLink', $view);
-    }
-
-    public function setActiveMenuItem($view)
-    {
-        $this->activeView = $view;
+        $this->emit('handleSetContent', $view);
     }
 
     public function getIconClass($componentPath)

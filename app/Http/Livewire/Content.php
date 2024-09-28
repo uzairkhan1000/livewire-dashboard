@@ -10,14 +10,14 @@ class Content extends Component
     public $activeView = 'dashboard';
     public $showSettings = false;
 
-    protected $listeners = ['handleSetNavbarLink'];
+    protected $listeners = ['handleSetContent'];
 
     public function render()
     {
         return view('livewire.content');
     }
 
-    public function handleSetNavbarLink($view)
+    public function handleSetContent($view)
     {
         if ($view !== $this->activeView) {
             
@@ -32,7 +32,7 @@ class Content extends Component
 
             $cleanedSubstring = ucwords(str_replace(['-', '_'], ' ', $substringFromLastDot));
             $this->activePage = $cleanedSubstring;
-            $this->emit('setActiveMenuItem', $view);
+            // $this->emit('setActiveMenuItem', $view);
             
         }
     }
